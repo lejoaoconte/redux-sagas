@@ -16,7 +16,8 @@ async function userRequest(login: string) {
   };
   try {
     const request: any = await api.get(`/user?login=${login}`, config);
-    userApi = request.data[0];
+    if (request.data.length > 0) userApi = request.data[0];
+    else userApi = {} as any;
     return true;
   } catch {
     return false;

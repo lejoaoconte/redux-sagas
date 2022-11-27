@@ -1,11 +1,14 @@
 import { Store, AnyAction } from "redux";
 
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
+
 import { configureStore } from "@reduxjs/toolkit";
 
 import createSagaMiddleware from "@redux-saga/core";
 
-import rootReucer from "./reducers";
-import rootSaga from "./sagas";
+import rootReucer from "src/redux/reducers";
+import rootSaga from "src/redux/sagas";
+import { AppDispatch, RootState } from "src/redux/@types/store";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -20,3 +23,6 @@ export default store;
 
 export * from "./actions";
 export * from "./@types";
+
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+export const useAppDispatch = () => useDispatch<AppDispatch>();
