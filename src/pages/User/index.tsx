@@ -4,6 +4,7 @@ import "./User.styles.css";
 
 import { getUserRequest, useAppDispatch, useAppSelector } from "src/redux";
 import { UserState } from "src/redux/@types/user";
+import { Link } from "react-router-dom";
 
 function User() {
   const dispatch = useAppDispatch();
@@ -32,13 +33,8 @@ function User() {
         Object.values(user)?.length > 0 &&
         user?.login !== "" && (
           <section className="userInfos">
-            <h3>{user?.name}</h3>
-            <img src={user?.avatarURL} alt={user?.name} />
-            <ul>
-              <li>login: {user?.login}</li>
-              <li>email: {user?.email}</li>
-              <li>telefone: {user?.telefone}</li>
-            </ul>
+            <h3>Encontrei {user?.name}</h3>
+            <Link to="/infos">Ver informações</Link>
           </section>
         )}
 
