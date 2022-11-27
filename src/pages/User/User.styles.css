@@ -45,30 +45,16 @@
   gap: 20px;
 }
 
-.userInfos > img {
-  width: 200px;
-  border-radius: 100%;
+.userInfos a {
+  color: black;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.userInfos a:hover {
+  text-decoration: underline;
 }
 
 .userInfos > h3 {
-  font-size: 2rem;
-}
-
-.userInfos > ul {
-  list-style-type: none;
-
-  width: 100%;
-  gap: 10px;
-
-  padding: 0;
-  margin: 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.userInfos > ul > li {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }

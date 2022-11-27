@@ -11,13 +11,16 @@ import store from "src/redux";
 import "./index.css";
 
 import { App } from "./App";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <Provider store={store}>
-    <LoadingBar />
-    <App />
+    <BrowserRouter>
+      <LoadingBar />
+      <App />
+    </BrowserRouter>
   </Provider>
 );
