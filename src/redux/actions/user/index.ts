@@ -4,7 +4,7 @@ import {
   GET_USER_FAILURE,
   GET_USER_REQUEST,
   GET_USER_SUCCESS,
-} from "src/redux/@types/index";
+} from "src/redux/@types";
 
 export function getUserRequest(login: string): {
   type: string;

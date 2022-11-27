@@ -1,7 +1,9 @@
+import User from "src/pages/User";
+
 export function App() {
   return (
     <div>
-      <h1>aa</h1>
+      <User />
     </div>
   );
 }
