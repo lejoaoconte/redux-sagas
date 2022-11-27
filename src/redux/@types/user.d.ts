@@ -7,3 +7,9 @@ export interface UserType {
   telefone: string;
   email: string;
 }
+
+export interface UserState {
+  user: UserType;
+  loading: boolean;
+  error: string;
+}
