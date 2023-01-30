@@ -1,4 +1,4 @@
-# Redux Sagas
+# Redux-Sagas
 
 **redux-saga** é um middleware redux que pode ser começada, continuada e parada com as actions do redux e tem acesso a todo state do redux, assim como pode acessar os dispatchs, além de ser assíncrona, fazendo side effects na aplicação.
 
@@ -51,7 +51,7 @@ Todos serão melhor explicados ao longo do desenvolvimento do artigo. Mas após 
 
 ---
 
-- Primeiro passo seria **definir as actions,** que é usada para poder gerenciar o estado de forma mais assertiva, ou seja, passando os dados corretos para o middleware e para o reducer, gerando um estado novo que irá ser definido.
+Primeiro passo seria **definir as actions,** que é usada para poder gerenciar o estado de forma mais assertiva, ou seja, passando os dados corretos para o middleware e para o reducer, gerando um estado novo que irá ser definido.
 
 ```tsx
 import { UserType } from "src/redux/@types/user"; // Tipagem definida em @types para poder ser usada ao longo da aplicação.
@@ -94,7 +94,7 @@ export function getUserFailure(error: string): {
 }
 ```
 
-- Após isso podemos **definir nossos reducers**, que contém o estado antes de chegar no store, onde faz o gerenciamento.
+Após isso podemos **definir nossos reducers**, que contém o estado antes de chegar no store, onde faz o gerenciamento.
 
 ```tsx
 import {
@@ -178,7 +178,7 @@ export function myReducer(
 }
 ```
 
-- Por fim, podemos definir o sagas, que é o que estamos procurando e o que é diferente neste caso.
+Por fim, podemos definir o sagas, que é o que estamos procurando e o que é diferente neste caso.
 
 ```tsx
 import { all, call, put, takeLatest } from "@redux-saga/core/effects";
@@ -246,7 +246,7 @@ export default function* rootSaga(): Generator<any> { // Exporta todos sagas e s
 }
 ```
 
-- Por fim, **criamos o store** que é **responsável por unir todo conjunto criado** anteriormente. Como o nome diz, é a “loja” do redux, onde temos tudo que precisamos sendo unido em um lugar só.
+Por fim, **criamos o store** que é **responsável por unir todo conjunto criado** anteriormente. Como o nome diz, é a “loja” do redux, onde temos tudo que precisamos sendo unido em um lugar só.
 
 ```tsx
 import { Store, AnyAction } from "redux";
